@@ -1,0 +1,92 @@
+.drawer-portal {
+  position: fixed;
+  inset: 0 0 0 0;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: transparent;
+  font-family: var(--font-family);
+  transition: background-color .3s;
+  -webkit-transition: background-color .3s;
+  -moz-transition: background-color .3s;
+  -ms-transition: background-color .3s;
+  -o-transition: background-color .3s;
+}
+
+.drawer {
+  background-color: rgba(0, 40, 83, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  padding: 2rem;
+  height: 100%;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+}
+
+.drawer .close-btn { 
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+}
+
+.show {
+  background-color: rgba(0, 0, 0, .5)
+}
+.hide {
+  background-color: rgba(0, 0, 0, 0.0)
+}
+
+.show .drawer {
+  animation: show-drawer ease-out .3s forwards;
+  -webkit-animation: show-drawer ease-out .3s forwards;
+}
+
+.hide .drawer {
+  animation: hide-drawer ease-out .2s forwards;
+  -webkit-animation: hide-drawer ease-out .2s forwards;
+}
+
+@keyframes show-drawer {
+  from {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+to {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+}
+@keyframes hide-drawer {
+  from {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+}
+to {
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+}
+}
